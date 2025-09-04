@@ -6,3 +6,6 @@ c = 20
 b = 0
 d = a / b
 print(d)
+
+
+
