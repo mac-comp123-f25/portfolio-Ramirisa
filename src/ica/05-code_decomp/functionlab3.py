@@ -1,6 +1,19 @@
 import turtle
 import math
 
+def drawFiveCircles(turt,radius, centerX, centerY):
+    """"""
+    drawFiveCircles(sepalTurtle, 50, 0, 0)
+    turt.up()  # TODO: Step 2: start here
+    turt.goto(centerX, centerY)  # 2 different turtles
+    turt.down()  # where the center will be for flower
+    for reps in range(5):
+        turt.begin_fill()
+        turt.circle(radius)
+        turt.end_fill()
+        turt.left(72)
+        turt.up()
+
 """Light blue background, then light green circles, then red circles in the middle, then purple circle in the middle 
 with a yellow turtle inside purple circle"""
 
@@ -28,14 +41,8 @@ stampTurtle.speed(0)
 stampTurtle.shape("turtle")
 stampTurtle.hideturtle()
 
-sepalTurtle.up()                    # TODO: Step 2: start here
-sepalTurtle.goto(0, 0)
-sepalTurtle.down()
-for reps in range(5):
-    sepalTurtle.begin_fill()
-    sepalTurtle.circle(50)
-    sepalTurtle.end_fill()
-    sepalTurtle.left(72)
+
+drawFiveCircles(sepalTurtle, 50, 0, 0)
 
 
 petalTurtle.up()
@@ -188,3 +195,4 @@ stampTurtle.down()
 stampTurtle.stamp()
 
 win.exitonclick()
+
