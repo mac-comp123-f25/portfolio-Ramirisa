@@ -6,3 +6,5 @@ def add_user_nums():
         user_num = int(input("Enter a number (0 to quit): "))
 
     return sum_of_nums
+
+sum_of_nums = add_user_nums()

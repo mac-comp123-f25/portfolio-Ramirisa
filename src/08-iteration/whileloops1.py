@@ -5,6 +5,7 @@ def square_user_nums():
   while user_num >= 0:
     print(user_num, "squared is", user_num ** 2)
     user_inp = input("Enter the next number (negative to quit): ")
-    user_num = int(user_inp) #If we removed from within the loop, the loop would never change, it would just be the same 
+    user_num = int(user_inp) #If we removed from within the loop, the loop would never change, it would just be the same value looped every time
 
+square_user_nums()
 #First two lines are repeated because, the first set forms original value while the 2nd set allows for the value to update as the loop goes on.
