@@ -7,4 +7,4 @@ def add_user_nums():
 
     return sum_of_nums
 
-sum_of_nums = add_user_nums()
+add_user_nums()

@@ -5,3 +5,5 @@ def square_user_nums2():
       if user_num < 0:
         break
         print(user_num, "squared is", user_num ** 2)
+
+square_user_nums2()
