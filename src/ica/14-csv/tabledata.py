@@ -105,6 +105,59 @@ def main():
     print("Sunsets before 10pm =", count_sunsets_before(22, sun_table))
     print("Sunsets before 4pm =", count_sunsets_before(16, sun_table))
 
+    if __name__ == '__main__':
+        main()
 
-if __name__ == '__main__':
-    main()
+def lookup_office(name, direct_table):
+    for row in direct_table:
+        if row['Name'] == name: 
+            return row['Building'], row['OfficeNum'] #returning 2 values
+
+    return "No entry: " + name, "No entry: " + name
+
+
+def lookup_by_date(month, day, table):
+    day = str(day)
+
+    for row in table:
+        if row['Month'] == month and str(row['Day']) == day:
+            return row
+
+    return "No entry for " + month + " " + day
+
+
+
+def collect_by_letter(letter, table):
+    match_list = []
+    for row in table:
+        if row['Name'].startswith(letter):
+            match_list.append(row)
+    return match_list
+
+
+def select_by_month(month, table):
+    result = []
+
+    for row in table:
+        if row["Month"] == month:
+            result.append(row)
+
+    return result
+
+def average_daylight_time(table):
+    total_daylight = 0
+
+    for row in table:
+        rise_hour = int(row['SunRiseHour'])
+        rise_min = int(row['SunRiseMin'])
+        set_hour = int(row['SunSetHour'])
+        set_min = int(row['SunSetMin'])
+
+        daylight = daylight_hours(rise_hour, rise_min, set_hour, set_min)
+        total_daylight += daylight
+
+    avg_daylight = total_daylight / len(table)
+    return avg_daylight
+
+
+

@@ -149,3 +149,69 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+    def get_state_living_wage(state, table):
+        if state is None:
+            return None
+
+        target = state.strip().lower()
+
+        for row in table:
+            # Common keys in the CSV: 'State' and 'Abbrev'
+            name = str(row.get('State', '')).strip().lower()
+            abbrev = str(row.get('Abbrev', row.get('StateAbbrev', ''))).strip().lower()
+
+            if target == name or target == abbrev:
+                # read_living_wage_data already converts this to float
+                return row.get('AnnualLivingWage', None)
+
+        return None
+
+
+    def get_low_wage_states(table):
+        FEDERAL_MIN = 7.25
+        low_wage_list = []
+
+        for row in table:
+            if float(row['HourlyMinimumWage']) == FEDERAL_MIN:
+                low_wage_list.append(row)
+
+        return low_wage_list
+
+def get_expensive_states(table):
+    sorted_table = sorted(table, key=lambda row: row['AnnualLivingWage'], reverse=True)
+
+    top_five = sorted_table[:5]
+
+    return top_five
+
+
+def annual_wage(hourly_wage):
+    hours_per_year_family = 40 * 52 * 2  # 4160 total hours
+    annual_income = hourly_wage * hours_per_year_family
+    return annual_income
+
+def get_expensive_states(table):
+    sorted_table = sorted(table, key=lambda row: row['AnnualLivingWage'], reverse=True)
+
+    # Take the top 5 states
+    top_five = sorted_table[:5]
+
+    return top_five
+
+def get_gap_states(table):
+    gap_states = []
+
+    for row in table:
+        min_wage = float(row['HourlyMinimumWage'])
+        family_income = annual_wage(min_wage)
+
+        living_wage = float(row['AnnualLivingWage'])
+
+        if family_income < living_wage:
+            gap_states.append(row['State'])
+
+    return gap_states
+
+
