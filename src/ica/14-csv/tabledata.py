@@ -1,3 +1,4 @@
+
 """
 Examples of how to process CSV files
 
@@ -24,6 +25,7 @@ directory = [{'Name': 'Fox, Susan', 'Phone': '6553', 'Building': 'Olin-Rice', 'O
              {'Name': 'Li, Elena', 'Phone': '1923', 'Building': 'Olin-Rice', 'OfficeNum': '119'}]
 
 
+
 def lookup_phone(name, direct_table):
     """
     Given a name and a list-of-dictionaries sunTable, look up the person's
@@ -34,6 +36,7 @@ def lookup_phone(name, direct_table):
             return row['Phone']
 
     return "No entry: " + name
+
 
 
 def collect_by_building(building, table):
