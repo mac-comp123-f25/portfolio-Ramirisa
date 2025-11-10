@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import random
 # import math  # <- unused; safe to remove
 
@@ -12,11 +13,42 @@ class Employee:
         self.comments_received = 0            # starts at 0
 
     def __str__(self):
+=======
+"""
+Contains a simulation of the Petrie Multiplier that is based on classes.
+"""
+
+import random
+import math
+
+
+class Employee:
+    """
+    For this simulation, we only focus on the gender of an employee, and on
+    whether this employee is likely to make negative statements
+    towards the other gender.
+    """
+
+    def __init__(self, gender: str, will_comment):
+        """
+        Takes in the employee's gender and whether they comment, and it
+        saves those values to instance variables. It also initializes the
+        variable that holds the comments received by this employee to zero.
+        """
+        # TODO: Implement this method then remove this line
+        pass
+
+    def __str__(self):
+        """
+        Produces a printable string format for this employee.
+        """
+>>>>>>> 6b6f4bfcc4be35394f77a6148c0327dfb4ed7a25
         return (self.gender.rjust(5)
                 + ": "
                 + str(self.comments_received)
                 + " sexist comments received")
 
+<<<<<<< HEAD
     # --- Methods required by the spec ---
     def set_commenter_status(self, status: bool):
         self.will_comment = status
@@ -56,20 +88,48 @@ def create_employees(total_num: int):
     for _ in range(num_women):
         employees.append(Employee("Woman", False))
     return employees
+=======
+
+def print_employee_list(lst):
+    """
+    Given a list of employees, this method will print the details of each employee
+    by using the print() method
+    """
+    # TODO: Implement this function then remove this line
+    pass
+
+
+def create_employees(total_num):
+    """
+    Takes in the number of employees to make, builds and returns a list that contains
+    that many employees. It ensures that ~80% are men and the rest women.
+    """
+    # TODO: Implement this function then remove this line
+    pass
+>>>>>>> 6b6f4bfcc4be35394f77a6148c0327dfb4ed7a25
 
 
 def create_commenters(lst):
     """
+<<<<<<< HEAD
     Each employee has a 20% chance to be marked as a commenter.
     Modifies employees in place; returns nothing.
     """
     for emp in lst:
         if random.random() < 0.2:          # 20% chance
             emp.set_commenter_status(True)
+=======
+    Given a list of employees, make 20% of each gender be sexist employees. This
+    method should not return anything.
+    """
+    # TODO: Implement this function then remove this line
+    pass
+>>>>>>> 6b6f4bfcc4be35394f77a6148c0327dfb4ed7a25
 
 
 def generate_comments(lst):
     """
+<<<<<<< HEAD
     Each employee who will comment gives ONE sexist comment to a random
     opposite-gender employee. Modifies counts in place; returns nothing.
     """
@@ -87,10 +147,19 @@ def generate_comments(lst):
         if w.get_commenter_status() and males:
             target = random.choice(males)
             target.receive_sexist_comment()
+=======
+    Given a list of employees, have each sexist employee give one sexist comment to
+    another employee of the opposite gender, chosen randomly. This method should
+    not return anything
+    """
+    # TODO: Implement this function then remove this line
+    pass
+>>>>>>> 6b6f4bfcc4be35394f77a6148c0327dfb4ed7a25
 
 
 def average_comments(lst):
     """
+<<<<<<< HEAD
     Return (<avg_for_men>, <avg_for_women>) based on comments_received.
     """
     male_counts = []
@@ -105,6 +174,13 @@ def average_comments(lst):
     avg_male   = (sum(male_counts) / len(male_counts)) if male_counts else 0
     avg_female = (sum(female_counts) / len(female_counts)) if female_counts else 0
     return (avg_male, avg_female)
+=======
+    Returns a tuple that represents the average amount of comments received for men and women
+    respectively. Return statement will be in the form (<avg_for_men>, <avg_for_women>)
+    """
+    # TODO: Implement this function then remove this line
+    pass
+>>>>>>> 6b6f4bfcc4be35394f77a6148c0327dfb4ed7a25
 
 
 def main():
@@ -149,4 +225,8 @@ if __name__ == "__main__":
     print(average_comments(employees))
 
     "<----- Run the simulation ----->"
+<<<<<<< HEAD
     # main()  # <-- KEEP THIS, Uncomment it after implementing all the functions
+=======
+    # main()  # <-- KEEP THIS, Uncomment it after implementing all the functions
+>>>>>>> 6b6f4bfcc4be35394f77a6148c0327dfb4ed7a25
