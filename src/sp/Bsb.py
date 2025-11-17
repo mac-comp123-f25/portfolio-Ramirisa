@@ -433,3 +433,5 @@ _tick()
 
 scr.update()
 T.done()
+
+#Source Chatgpt used for math parts of the code

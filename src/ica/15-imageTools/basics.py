@@ -1,6 +1,7 @@
 from src.ica.helpers.imageTools import *
 from src.ica.helpers.dummyWindow import *
 
+
 def main():
     # Load the original image from the SampleImages folder (relative path)
     orig = Picture("../SampleImages/mightyMidway.jpg")
