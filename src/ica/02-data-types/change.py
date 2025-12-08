@@ -1,0 +1,15 @@
+Money=732
+Dollars=Money//100
+print(Dollars)
+rem_after_dollars=Money%100
+Quarters=rem_after_dollars//25
+print(Quarters)
+rem_after_quarters=rem_after_dollars%25
+Dimes=rem_after_quarters//10
+print(Dimes)
+rem_after_dimes=rem_after_quarters%10
+Nickels=rem_after_dimes//5
+print(Nickels)
+rem_after_nickels=rem_after_dimes%5
+Pennies=rem_after_nickels//1
+print(Pennies)

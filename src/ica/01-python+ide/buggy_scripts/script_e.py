@@ -1,4 +1,5 @@
 # scriptE.py
 
 strng = "apples"
-print(string, string, string)
+print(strng, strng, strng)
+Simple mispelling of strng.
